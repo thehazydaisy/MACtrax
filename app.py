@@ -1,6 +1,9 @@
 from flask import Flask, render_template, request, send_file
 import parser   # Import the parser module directly
 
+import subprocess
+subprocess.call(['pip', 'list'])  # Print installed packages
+
 app = Flask(__name__)
 
 @app.route('/', methods=['GET', 'POST'])

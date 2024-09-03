@@ -20,7 +20,8 @@ def index():
             return "Invalid choice."
 
         output_file = 'extracted_data.txt'
-        parser.parse_mac_addresses_and_dates(urls, output_file)
+        success_file = 'successful_urls.txt' 
+        parser.parse_mac_addresses_and_dates(urls, output_file, success_file) 
         return send_file(output_file, as_attachment=True)
     else:
         return render_template('index.html') 
